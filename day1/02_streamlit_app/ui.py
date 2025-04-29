@@ -13,6 +13,22 @@ def display_chat_page(pipe):
     st.subheader("質問を入力してください")
     user_question = st.text_area("質問", key="question_input", height=100, value=st.session_state.get("current_question", ""))
     submit_button = st.button("質問を送信")
+    st.write("""
+    Gemma 3 1B の主な特徴\n
+    ・モデル概要\n
+      パラメータ数：​10億（1B）\n
+      モデルサイズ：​約529MB（量子化済み）\n
+      コンテキストウィンドウ：​32,000トークン\n
+      対応言語数：​140以上\n
+      マルチモーダル対応：​非対応（テキスト専用）\n
+      動作環境：​単一のGPUやCPUでも動作可能\n
+    ・特徴と利点\n
+      軽量設計：​モデルサイズが小さく、スマートフォンやラップトップなどの低スペックデバイスでも動作可能です。\n
+      高速推論：​処理速度が速く、リアルタイムアプリケーションにも適しています。\n
+      多言語対応：​140以上の言語をサポートし、グローバルなアプリケーション開発に適しています。\n
+      オープンモデル：​商用利用が可能で、Hugging FaceやGoogle AI Studioなどで利用できます。\n
+      ローカル実行：​インターネット接続なしで動作し、プライバシーを重視した運用が可能です。\n
+    """)
 
     # セッション状態の初期化（安全のため）
     if "current_question" not in st.session_state:
